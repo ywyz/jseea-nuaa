@@ -9,7 +9,7 @@
 #define NUM1 128
 #define NUM2 50
 
-Class cBook
+class cBook
 {
 public:
     cBook(){};
@@ -20,11 +20,11 @@ public:
     char* GetName();            // 获取图书名称
     void SetName(char* cName);  // 设置图书名称
     char* GetISBN();            // 获取图书ISBN编号
-    void SetISBN();             // 设置图书ISBN编号
+    void SetISBN(char* cISBN);             // 设置图书ISBN编号
     char* GetPrice();           // 获取图书价格
-    void SetPrice(char* cPrice) // 设置图书价格
+    void SetPrice(char* cPrice);// 设置图书价格
     char* GetAuthor();          // 获取图书作者
-    void SetAuthor();           // 设置图书作者
+    void SetAuthor(char* cAuthor);           // 设置图书作者
     void WriteData();           // 写入图书数据
     void DelteData(int iCount); // 删除图书数据
     void GetBookFromFile(int iCount);   // 从文件中读取数据
@@ -32,7 +32,7 @@ protected:
     char m_cName[NUM1];
     char m_cISBN[NUM1];
     char m_cPrice[NUM2];
-    char m_cAuthor[NUM2]
+    char m_cAuthor[NUM2];
 };
 
 #endif //C_PLUS_BOOK_H
