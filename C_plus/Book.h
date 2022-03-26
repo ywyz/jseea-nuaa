@@ -26,7 +26,7 @@ public:
     char* GetAuthor();          // 获取图书作者
     void SetAuthor(char* cAuthor);           // 设置图书作者
     void WriteData();           // 写入图书数据
-    void DelteData(int iCount); // 删除图书数据
+    void DeleteData(int iCount); // 删除图书数据
     void GetBookFromFile(int iCount);   // 从文件中读取数据
 protected:
     char m_cName[NUM1];

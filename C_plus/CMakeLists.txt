@@ -8,4 +8,5 @@ include_directories(.)
 add_executable(C_plus
         Book.cpp
         Book.h
-        test.cpp main.cpp)
+        Screen.h
+        main.cpp )

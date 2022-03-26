@@ -103,7 +103,7 @@ void cBook::GetBookFromFile(int iCount) {
 }
 
 
-void cBook::DelteData(int iCount) {
+void cBook::DeleteData(int iCount) {
     long respos;
     int iDataCount = 0;
     fstream file;
