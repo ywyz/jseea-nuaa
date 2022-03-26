@@ -1,6 +1,6 @@
 //
 // Created by yw980 on 2022/3/26.
-// çª—ä½“æ¨¡å—è®¾è®¡
+// ´°ÌåÄ£¿éÉè¼Æ
 //
 
 
@@ -11,25 +11,25 @@
 
 using namespace std;
 
-// é€šè¿‡systemå‡½æ•°æ‰§è¡Œmodeå‘½ä»¤ï¼Œæ§åˆ¶æ˜¾ç¤ºä¿¡æ¯çš„è¡Œæ•°ï¼Œåˆ—æ•°ï¼ŒèƒŒæ™¯é¢œè‰²ç­‰ã€‚
+// Í¨¹ısystemº¯ÊıÖ´ĞĞmodeÃüÁî£¬¿ØÖÆÏÔÊ¾ĞÅÏ¢µÄĞĞÊı£¬ÁĞÊı£¬±³¾°ÑÕÉ«µÈ¡£
 void SetScreenGrid(int cols, int lines){
     char sysSetBuf[80];
     sprintf(sysSetBuf, "mode con cols = %d lines = %d", cols, lines);
     system(sysSetBuf);
 }
-//è®¾ç½®æ§åˆ¶å°çš„æ ‡é¢˜
+//ÉèÖÃ¿ØÖÆÌ¨µÄ±êÌâ
 void SetSysCaption()
 {
     system("Library System");
 }
 
-//æ¸…å±
+//ÇåÆÁ
 void ClearScreen()
 {
     system("cls");
 }
 
-//æ˜¾ç¤ºå›¾ä¹¦ç®¡ç†ç³»ç»Ÿçš„æ¬¢è¿ä¿¡æ¯
+//ÏÔÊ¾Í¼Êé¹ÜÀíÏµÍ³µÄ»¶Ó­ĞÅÏ¢
 void ShowWelcome()
 {
     for(int i = 0; i < 7; i++)
@@ -42,27 +42,27 @@ void ShowWelcome()
     cout << "********************" << endl;
 }
 
-// æ˜¾ç¤ºç³»ç»Ÿä¸»èœå•
+// ÏÔÊ¾ÏµÍ³Ö÷²Ëµ¥
 void ShowRootMenu()
 {
     cout << setw(40);
-    cout << "  è¯·é€‰æ‹©åŠŸèƒ½ï¼š " << endl;
+    cout << "  ÇëÑ¡Ôñ¹¦ÄÜ£º " << endl;
     cout << endl;
     cout << setw(38);
-    cout << "1.æ·»åŠ æ–°ä¹¦" << endl;
+    cout << "1.Ìí¼ÓĞÂÊé" << endl;
     cout << endl;
     cout << setw(38);
-    cout << "2 æµè§ˆå…¨éƒ¨" << endl;
+    cout << "2 ä¯ÀÀÈ«²¿" << endl;
     cout << endl;
     cout << setw(38);
-    cout << "3.åˆ é™¤å›¾ä¹¦" << endl;
+    cout << "3.É¾³ıÍ¼Êé" << endl;
 }
 
-// è´Ÿè´£ç¨‹åºè¿›å…¥æŸä¸€æ¨¡å—åï¼Œç­‰å¾…ç”¨æˆ·è¿›è¡Œå¤„ç†
+// ¸ºÔğ³ÌĞò½øÈëÄ³Ò»Ä£¿éºó£¬µÈ´ıÓÃ»§½øĞĞ´¦Àí
 void WaitUser()
 {
     int iInputPage = 0;
-    cout << "enter è¿”å›ä¸»èœå• q æ¨å‡º" << endl;
+    cout << "enter ·µ»ØÖ÷²Ëµ¥ q ÍÆ³ö" << endl;
     char buf[256];
     gets(buf);
     if (buf[0] == 'q')
@@ -75,7 +75,7 @@ int GetSelect()
     gets(buf);
     return atoi(buf);
 }
-// ä¸»å¾ªç¯
+// Ö÷Ñ­»·
 void mainloop()
 {
     ShowWelcome();
@@ -87,18 +87,18 @@ void mainloop()
         switch (GetSelect()) {
             case 1:
                 ClearScreen();
-                cout << "æ·»åŠ æ–°ä¹¦" << endl;
+                cout << "Ìí¼ÓĞÂÊé" << endl;
                 //GuideInput();
                 break;
 
             case 2:
                 ClearScreen();
-                cout << "æµè§ˆå…¨éƒ¨" << endl;
+                cout << "ä¯ÀÀÈ«²¿" << endl;
                 break;
 
             case 3:
                 ClearScreen();
-                cout << "åˆ é™¤ä¹¦ç±" << endl;
+                cout << "É¾³ıÊé¼®" << endl;
                 break;
         }
     }
