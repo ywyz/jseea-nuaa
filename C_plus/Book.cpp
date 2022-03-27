@@ -145,8 +145,6 @@ void cBook::DeleteData(int iCount) {
     ofile.close();
     remove("temp.dat");
 }
-
-//添加新书模块
 void GuideInput()
 {
     char inName[NUM1];
@@ -180,7 +178,7 @@ long GetFileLength(ifstream & ifs)
 }
 
 // 浏览全部模块
-void ViewData(int iSelPage = 1)
+void ViewData(int iSelPage)
 {
     int iPage = 0;
     int iCurPage = 0;
@@ -259,4 +257,16 @@ void ViewData(int iSelPage = 1)
     else
         WaitUser();
     ifile.close();
+}
+
+
+// 删除图书模块
+void DeleteBookFromFile() {
+    int iDelCount;
+    cout << "Input delete index" << endl;
+    cin >> iDelCount;
+    cBook tmpBook;
+    tmpBook.DeleteData(iDelCount);
+    cout << "Delete Finish" << endl;
+    WaitUser();
 }

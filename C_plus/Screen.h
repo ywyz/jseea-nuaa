@@ -87,18 +87,17 @@ void mainloop()
         switch (GetSelect()) {
             case 1:
                 ClearScreen();
-                cout << "添加新书" << endl;
-                //GuideInput();
+                GuideInput();
                 break;
 
             case 2:
                 ClearScreen();
-                cout << "浏览全部" << endl;
+                ViewData();
                 break;
 
             case 3:
                 ClearScreen();
-                cout << "删除书籍" << endl;
+                DeleteBookFromFile();
                 break;
         }
     }
