@@ -152,13 +152,13 @@ void GuideInput()
     char inPrice[NUM2];
     char inAuthor[NUM2];
     cout << "输入书名" << endl;
-    cin >> inName;
+    cin.getline(inName, NUM1);
     cout << "输入ISBN" << endl;
-    cin >> inISDN;
+    cin.getline(inISDN, NUM1);
     cout << "输入价格" << endl;
-    cin >> inPrice;
+    cin.getline(inPrice, NUM2);
     cout << "输入作者" << endl;
-    cin >> inAuthor;
+    cin.getline(inAuthor, NUM2);
     cBook book(inName, inISDN, inPrice, inAuthor);
     book.WriteData();
     cout << "Write Finish" << endl;
