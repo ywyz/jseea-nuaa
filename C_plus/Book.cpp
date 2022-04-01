@@ -55,7 +55,7 @@ void cBook::SetAuthor(char* cAuthor) {
     strncpy(m_cAuthor, cAuthor, NUM2);
 }
 
-// è¯»å†™æ–‡ä»¶å‡½æ•°
+// ¶ÁĞ´ÎÄ¼şº¯Êı
 
 void cBook::WriteData() {
     ofstream ofile;
@@ -151,13 +151,13 @@ void GuideInput()
     char inISDN[NUM1];
     char inPrice[NUM2];
     char inAuthor[NUM2];
-    cout << "è¾“å…¥ä¹¦å" << endl;
+    cout << "ÊäÈëÊéÃû" << endl;
     cin >> inName;
-    cout << "è¾“å…¥ISBN" << endl;
+    cout << "ÊäÈëISBN" << endl;
     cin >> inISDN;
-    cout << "è¾“å…¥ä»·æ ¼" << endl;
+    cout << "ÊäÈë¼Û¸ñ" << endl;
     cin >> inPrice;
-    cout << "è¾“å…¥ä½œè€…" << endl;
+    cout << "ÊäÈë×÷Õß" << endl;
     cin >> inAuthor;
     cBook book(inName, inISDN, inPrice, inAuthor);
     book.WriteData();
@@ -165,7 +165,7 @@ void GuideInput()
     WaitUser();
 }
 
-// è·å–æ–‡ä»¶é•¿åº¦
+// »ñÈ¡ÎÄ¼ş³¤¶È
 long GetFileLength(ifstream & ifs)
 {
     long tmppos;
@@ -177,16 +177,16 @@ long GetFileLength(ifstream & ifs)
     return respos;
 }
 
-// æµè§ˆå…¨éƒ¨æ¨¡å—
+// ä¯ÀÀÈ«²¿Ä£¿é
 void ViewData(int iSelPage)
 {
     int iPage = 0;
     int iCurPage = 0;
     int iDataCount = 0;
-    char inName[NUM1];          // å­˜å‚¨å›¾ä¹¦åç§°çš„å˜é‡
-    char inISBN[NUM1];          // å­˜å‚¨å›¾ä¹¦ISBNç¼–å·çš„å˜é‡
-    char inPrice[NUM2];         // å­˜å‚¨å›¾ä¹¦ä»·æ ¼çš„å˜é‡
-    char inAuthor[NUM2];        // å­˜å‚¨å›¾ä¹¦ä½œè€…çš„å˜é‡
+    char inName[NUM1];          // ´æ´¢Í¼ÊéÃû³ÆµÄ±äÁ¿
+    char inISBN[NUM1];          // ´æ´¢Í¼ÊéISBN±àºÅµÄ±äÁ¿
+    char inPrice[NUM2];         // ´æ´¢Í¼Êé¼Û¸ñµÄ±äÁ¿
+    char inAuthor[NUM2];        // ´æ´¢Í¼Êé×÷ÕßµÄ±äÁ¿
 
     bool bIndex = false;
     int iFileLength;
@@ -194,44 +194,44 @@ void ViewData(int iSelPage)
     ifstream ifile;
     ifile.open("book.dat", ios::binary);
     iFileLength = GetFileLength(ifile);
-    iDataCount = iFileLength / (NUM1 + NUM2 + NUM1 + NUM2);         //æ ¹æ®æ–‡ä»¶é•¿åº¦ï¼Œè®¡ç®—æ–‡ä»¶ä¸­æ€»çš„è®°å½•æ•°
+    iDataCount = iFileLength / (NUM1 + NUM2 + NUM1 + NUM2);         //¸ù¾İÎÄ¼ş³¤¶È£¬¼ÆËãÎÄ¼şÖĞ×ÜµÄ¼ÇÂ¼Êı
 
 
     if (iDataCount >= 1)
         bIndex = true;
     iPage = iDataCount / 20 + 1;
-    ClearScreen();                                                  //æ¸…é™¤å±å¹•ä¿¡æ¯
+    ClearScreen();                                                  //Çå³ıÆÁÄ»ĞÅÏ¢
 
 
-    cout << " å…±æœ‰è®°å½• " << iDataCount << "  ";
-    cout << " å…±æœ‰é¡µæ•° " << iPage << "  ";
-    cout << " å½“å‰é¡µæ•° " << iCurPage << "  ";
-    cout << " n ä¸‹ä¸€é¡µ r è¿”å›"  << endl;
+    cout << " ¹²ÓĞ¼ÇÂ¼ " << iDataCount << "  ";
+    cout << " ¹²ÓĞÒ³Êı " << iPage << "  ";
+    cout << " µ±Ç°Ò³Êı " << iCurPage << "  ";
+    cout << " n ÏÂÒ»Ò³ r ·µ»Ø"  << endl;
     cout << setw(5) << "Index";
     cout << setw(22) << "Name" << setw(22) << "ISBN" ;
     cout << setw(15) << "Price" << setw(15) << "Author";
     cout << endl;
     try{
-        // æ ¹æ®å›¾ä¹¦è®°å½•ç¼–å·æŸ¥æ‰¾åœ¨æ–‡ä»¶ä¸­çš„ä½ç½®ã€‚
+        // ¸ù¾İÍ¼Êé¼ÇÂ¼±àºÅ²éÕÒÔÚÎÄ¼şÖĞµÄÎ»ÖÃ¡£
         ifile.seekg((iCurPage - 1) * 20 * (NUM1 + NUM2 + NUM1 + NUM2), ios::beg);
         if(!ifile.fail())
         {
             for(int i = 1; i<21;i++)
             {
-                memset(inName, 0, 128);               // å°†å˜é‡æ¸…é›¶
+                memset(inName, 0, 128);               // ½«±äÁ¿ÇåÁã
                 memset(inISBN, 0,  128);
                 memset(inAuthor,0, 50);
                 memset(inPrice, 0, 50);
                 if(bIndex)
                     cout << setw(3) << ((iCurPage - 1) * 20 + i);
 
-                ifile.read(inName, NUM1);              //è¯»å–å›¾ä¹¦åå­—
+                ifile.read(inName, NUM1);              //¶ÁÈ¡Í¼ÊéÃû×Ö
                 cout << setw(24) << inName;
-                ifile.read(inISBN, NUM1);              //è¯»å–å›¾ä¹¦ISBN
+                ifile.read(inISBN, NUM1);              //¶ÁÈ¡Í¼ÊéISBN
                 cout << setw(24) << inISBN;
-                ifile.read(inPrice, NUM2);              //è¯»å–å›¾ä¹¦ä»·æ ¼
+                ifile.read(inPrice, NUM2);              //¶ÁÈ¡Í¼Êé¼Û¸ñ
                 cout << setw(12) << inPrice;
-                ifile.read(inAuthor, NUM1);              //è¯»å–å›¾ä¹¦ä½œè€…
+                ifile.read(inAuthor, NUM1);              //¶ÁÈ¡Í¼Êé×÷Õß
                 cout << setw(12) << inAuthor;
                 cout << endl;
 
@@ -245,8 +245,8 @@ void ViewData(int iSelPage)
     catch (...)
     {
         cout << "throw file exception" << endl;
-        throw "file error occurred";                // æŠ›å‡ºå¼‚å¸¸
-        ifile.close();                              // å…³é—­æ–‡ä»¶æµ
+        throw "file error occurred";                // Å×³öÒì³£
+        ifile.close();                              // ¹Ø±ÕÎÄ¼şÁ÷
     }
 
     if (iCurPage < iPage)
@@ -260,7 +260,7 @@ void ViewData(int iSelPage)
 }
 
 
-// åˆ é™¤å›¾ä¹¦æ¨¡å—
+// É¾³ıÍ¼ÊéÄ£¿é
 void DeleteBookFromFile() {
     int iDelCount;
     cout << "Input delete index" << endl;

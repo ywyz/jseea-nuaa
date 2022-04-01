@@ -39,22 +39,24 @@ void ShowWelcome()
     cout << setw(40);
     cout << "********************" << endl;
     cout << setw(40);
+    cout << "欢迎进入图书管理系统" << endl;
+    cout << setw(40);
     cout << "********************" << endl;
 }
 
 // 显示系统主菜单
 void ShowRootMenu()
 {
-    cout << setw(40);
+    cout << setw(30);
     cout << "  请选择功能： " << endl;
     cout << endl;
-    cout << setw(38);
+    cout << setw(30);
     cout << "1.添加新书" << endl;
     cout << endl;
-    cout << setw(38);
+    cout << setw(30);
     cout << "2 浏览全部" << endl;
     cout << endl;
-    cout << setw(38);
+    cout << setw(30);
     cout << "3.删除图书" << endl;
 }
 
