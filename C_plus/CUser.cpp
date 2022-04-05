@@ -29,8 +29,8 @@ void CUser::setUserName(string name) {
     userName = name;
 }
 
-string CUser::getUserId() {
-    return name;
+string CUser::getUserName() {
+    return userName;
 }
 
 void CUser::show() {

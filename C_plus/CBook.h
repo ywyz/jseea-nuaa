@@ -8,13 +8,13 @@
 using namespace std;
 class CBook {
 private:
-    int id;             // 图书编号
-    string BookName;    // 图书名字
+    int bookID;             // 图书编号
+    string bookName;    // 图书名字
     bool isOnShelf;     // true为在架， false为借出
     bool isExist;       // true为存在，false为删除
 public:
     CBook();            // 默认构造函数
-    CBook(int bookID, string name);     // 初始化图书信息
+    CBook(int bID, string name);     // 初始化图书信息
     void setID(int n);                  // 设置图书编号
     int getID();                        // 获取图书编号
     void setName(string name);          // 设置图书名称
