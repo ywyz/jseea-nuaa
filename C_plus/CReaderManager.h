@@ -25,6 +25,7 @@ public:
     void editReader(int subscript, string readerName);// 编辑读者名
     void editReader(int subscript, int readerID);// 编辑读者编号
     void editReader(int subscript,bool is_Borrow);// 编辑读者借书标志
+    void editReader(int subscript, CBook book);
     void delReader(int subscript);           // 删除读者
     void listReaders();                      // 显示所有读者
     void save(string filename = "readers.db"); // 保存到文件
