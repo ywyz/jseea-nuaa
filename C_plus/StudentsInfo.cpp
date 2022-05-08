@@ -7,12 +7,11 @@
 #include <string>
 
 using namespace std;
-StudentsInfo::StudentsInfo(string sName, long sID, char Sex, int sAge, float AverageAge) {
+StudentsInfo::StudentsInfo(string sName, long sID, char Sex, int sAge) {
     studentName = sName;
     studentAge = sAge;
     studentID = sID;
     studentSex = Sex;
-    averageGrade = AverageAge;
 }
 
 int StudentsInfo::getAge() {
@@ -34,21 +33,25 @@ long StudentsInfo::getID() {
     return studentID;
 }
 
+void StudentsInfo::setSex(char sex) {
+    studentSex = sex;
+}
+
+char StudentsInfo::getSex() {
+    return studentSex;
+}
+
 void StudentsInfo::setID(long ID){
     studentID = ID;
-}
-
-void StudentsInfo::setGrade(float grade) {
-    averageGrade = grade;
-}
-
-float StudentsInfo::getGrade() {
-    return averageGrade;
 }
 
 void StudentsInfo::showInfo() {
     cout << "学生姓名：" << studentName << endl;
     cout << "学号： " << studentID << endl;
     cout << "性别： " << studentSex << endl;
-    cout << ""
+    cout << "年龄： " << studentAge << endl;
+}
+
+void writeStuInfo(){
+
 }
