@@ -5,6 +5,7 @@
 #include "StudentsInfo.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 StudentsInfo::StudentsInfo(string sName, long sID, char Sex, int sAge) {
@@ -53,5 +54,14 @@ void StudentsInfo::showInfo() {
 }
 
 void writeStuInfo(){
+    int i;          //没看懂干嘛的
+    ofstream  outFile("Student.dat", ios::out);
+
+    if (!outFile)
+    {
+        cerr << "文件不存在，打开文件失败！"  << endl;
+        exit(1);
+    }
+
 
 }
