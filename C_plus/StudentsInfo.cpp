@@ -53,8 +53,8 @@ void StudentsInfo::showInfo() {
     cout << "年龄： " << studentAge << endl;
 }
 
-void writeStuInfo(){
-    int i;          //没看懂干嘛的
+void StudentsInfo::writeStuInfo(){
+
     ofstream  outFile("Student.dat", ios::out);
 
     if (!outFile)
@@ -62,6 +62,23 @@ void writeStuInfo(){
         cerr << "文件不存在，打开文件失败！"  << endl;
         exit(1);
     }
+    outFile << studentID << " ";
+    outFile << studentName << " ";
+    outFile << studentAge << " ";
+    outFile << studentSex << " ";
+    outFile << endl;
+    outFile.close();
+    cout << endl;
+    cout << "----数据已成功保存----";
+}
 
-
+void StudentsInfo::readStuInfo() {
+    fstream readFile("Student.dat");        // 打开文件操作
+    int rows = 0;
+    if (!readFile)                             // 判断文件是否存在
+    {
+        cerr << "文件不存在，打开文件失败！"  << endl;
+        exit(1);
+    }
+    
 }
